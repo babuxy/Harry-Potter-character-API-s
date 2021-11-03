@@ -26,31 +26,32 @@ const App = () => {
             {charDetails && <Profile data={charDetails.map(p => (
                 //To assign unique key value Math.random() used 
                 <p key={p.name + " "  + Math.random()} >
-                    <p><img src={p.image} alt="pic" /></p>
-                    Name : {Object.keys(p.name).length ? p.name : " Info Not Available "} | 
-                    Alternate Names :  {Object.keys(p.alternate_names).length ? p.alternate_names : " Info Not Available "} |
+                    <img src={p.image} alt="pic" />
+                    Name : {p.name} | 
+                    {/* Alternate Names :  {typeof(p.alternate_names) == 'undefined' ? "No alt names" : p.alternate_names} | */}
+                    Alternate Names :  {p.alternate_names} | 
                     Species : {p.species} |
                     Gender : {p.gender} |
                     House :  {p.house} | 
                     Date of Birth : {p.dateOfBirth} | 
                     Year of Birth : {p.yearOfBirth} |
-                    Wizard : {Object.keys(p.wizard).length ? p.wizard : " Info Not Available "}|
-                    Ancestry : {p.ancestry}|
+                    Wizard : {p.wizard.toString()} | {/* If array value is boolean, toString() is required else boolean values are not displayed*/}
+                    Ancestry : {p.ancestry} |
                     Eye Colour : {p.eyeColour} |
                     Hair Colour : {p.hairColour} |
                     Patronus : {p.patronus} |
-                    Hogwarts Student : {Object.keys(p.hogwartsStudent).length ? p.hogwartsStudent : " Info Not Available "} |
-                    Hogwarts Staff : {Object.keys(p.hogwartsStaff).length ? p.hogwartsStaff : " Info Not Available "} |
+                    Hogwarts Student : {p.hogwartsStudent.toString()} |
+                    Hogwarts Staff : {p.hogwartsStaff.toString()} |
                     Actor : {p.actor} |
                     Alternate Actors : {Object.keys(p.alternate_actors).length ? p.alternate_actors : " Info Not Available "} |
-                    Alive : {Object.keys(p.alive).length ? p.alive : " Info Not Available "} |
-                    Wand Wood : {p.wand.wood} |
-                    Wand Core : {p.wand.core} | 
-                    {/* {/* Wand Length : {p.wand.length}  */}
-                    Wand Core : {Object.keys(p.wand.core.length).length ? p.wand.core.length : " Info Not Available "}
+                    Alive : {p.alive.toString()} |
+                    Wand Wood : {Object.keys(p.wand.wood).length ? p.wand.wood : " Info Not Available "} | 
+                    Wand Core : {Object.keys(p.wand.core).length ? p.wand.core : " Info Not Available "} | 
+                    Wand Length : {p.wand.length} |
+                  
                 </p>
             ))
-                } 
+                }  
             />
             }
 

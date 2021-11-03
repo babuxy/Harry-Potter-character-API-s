@@ -14,17 +14,7 @@ const Profile = (props) => {
         {data}
       
        
-        {/* //Below for testing only
-        <div className="Name" > {data && data.map(data => (
-        <p key={data.unique}>  {data}
-        {/* {data.species} | {data.gender} | {data.house}  */}
-        {/* <p>{data}</p>  */}
-        
-        {/* </p>
-      ))}
-        </div> */}
-
-        {/* //End testing */}
+  
         
         </>
     );
