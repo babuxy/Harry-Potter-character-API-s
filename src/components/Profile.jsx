@@ -9,9 +9,11 @@ const Profile = (props) => {
 
     return (
         <>
-         <p>
+   
+         
         {data}
-        </p>
+      
+       
         {/* //Below for testing only
         <div className="Name" > {data && data.map(data => (
         <p key={data.unique}>  {data}
