@@ -1,0 +1,20 @@
+:root{
+    background-color: palevioletred;
+    // overflow-x: hidden;
+    width: 90%
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    border-style: dotted;
+    border: solid 2px;
+    border-radius: 2px;
+   
+    
+}
+
+.Name{
+    font-style: italic;
+    color: bisque;
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Profile from "./components/Profile"
+import  "./components/Profile.scss"
 // import from "../components/App.css"
 
 const App = () => {
@@ -14,48 +15,51 @@ const App = () => {
             .catch(err => console.log(err))
     })
 
+
+    
     return (
 
 
 
-        <>
-            {/* JSON.stringify(json)); */}
+        <div className = "App">
+     
 
-
-
-            {charDetails && <Profile data={charDetails.map(p => (
-                //To assign unique key value Math.random() used 
+            {charDetails && <Profile data={charDetails.map((p) => (
+                
+                // To assign unique key value Math.random() used 
                 <p key={p.name + " "  + Math.random()} >
                     <img src={p.image} alt="pic" />
-                    Name : {p.name} | 
+                    <div className="Name">
+                    Name : {p.name} </div>
                     {/* Alternate Names :  {typeof(p.alternate_names) == 'undefined' ? "No alt names" : p.alternate_names} | */}
+                    <div className = "Other-Details">
                     Alternate Names :  {p.alternate_names} | 
                     Species : {p.species} |
                     Gender : {p.gender} |
-                    House :  {p.house} | 
+                    House :  {Object.keys(p.house).length ? p.house : " Info Not Available "} | 
                     Date of Birth : {p.dateOfBirth} | 
                     Year of Birth : {p.yearOfBirth} |
                     Wizard : {p.wizard.toString()} | {/* If array value is boolean, toString() is required else boolean values are not displayed*/}
-                    Ancestry : {p.ancestry} |
-                    Eye Colour : {p.eyeColour} |
-                    Hair Colour : {p.hairColour} |
-                    Patronus : {p.patronus} |
+                    Ancestry : {Object.keys(p.ancestry).length ? p.ancestry : " Info Not Available "} |
+                    Eye Colour : {Object.keys(p.eyeColour).length ? p.eyeColour : " Info Not Available "} |
+                    Hair Colour : {Object.keys(p.hairColour).length ? p.hairColour : " Info Not Available "} |
+                    Patronus : {Object.keys(p.patronus).length ? p.patronus : " Info Not Available "} |
                     Hogwarts Student : {p.hogwartsStudent.toString()} |
                     Hogwarts Staff : {p.hogwartsStaff.toString()} |
-                    Actor : {p.actor} |
+                    Actor : {Object.keys(p.actor).length ? p.actor : " Info Not Available "} |
                     Alternate Actors : {Object.keys(p.alternate_actors).length ? p.alternate_actors : " Info Not Available "} |
                     Alive : {p.alive.toString()} |
                     Wand Wood : {Object.keys(p.wand.wood).length ? p.wand.wood : " Info Not Available "} | 
                     Wand Core : {Object.keys(p.wand.core).length ? p.wand.core : " Info Not Available "} | 
-                    Wand Length : {p.wand.length} |
-                  
+                    Wand Length : {p.wand.length} 
+                  </div>
                 </p>
             ))
                 }  
             />
             }
 
-        </>
+        </div>
     )
 }
 
