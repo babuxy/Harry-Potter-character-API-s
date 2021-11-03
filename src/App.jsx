@@ -19,9 +19,10 @@ const App = () => {
      
             {/* {charDetails && <Profile data={charDetails} />} */}
 
-          {charDetails && <Profile data = {charDetails.map(p => (
-   <p key={p.name} >
-   {p.name} | {p.species} | {p.gender} | {p.house} | {p.dateOfBirth} | {p.actor} 
+          {charDetails && <Profile data = {charDetails.map(p=> (
+              //To assign unique key value Math.random() used 
+   <p key={p.name + Math.random()} > 
+   {p.name} | {p.species} | {p.gender} | {p.house} | {p.dateOfBirth} | {p.actor} | <p>{p.wand.wood}</p> | {p.image}
 </p>
           ))}/>}
             
